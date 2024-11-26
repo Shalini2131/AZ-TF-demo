@@ -28,5 +28,3 @@ jobs:
 
       - name: Terraform Apply
         run: terraform apply -auto-approve
-        env:
-          ARM_CLIENT_SECRET: ${{ secrets.AZURE_CREDENTIALS }}

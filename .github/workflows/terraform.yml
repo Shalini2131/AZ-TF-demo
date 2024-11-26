@@ -10,21 +10,26 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # Checkout code to get the Terraform configuration files
       - name: Checkout Code
         uses: actions/checkout@v3
 
+      # Set up Terraform
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v2
         with:
           terraform_version: 1.6.0
 
+      # Azure login using the service principal credentials from GitHub Secrets
       - name: Azure Login
         uses: azure/login@v1
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
+      # Initialize Terraform
       - name: Terraform Init
         run: terraform init
 
+      # Apply the Terraform plan
       - name: Terraform Apply
         run: terraform apply -auto-approve

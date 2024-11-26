@@ -3,19 +3,19 @@ variable "azure_client_secret" {
   description = "Azure Client Secret"
 }
 
-variable "subscription_id" {
+variable "subscriptionId" {
   description = "The Azure subscription ID"
 }
 
-variable "client_id" {
+variable "clientId" {
   description = "The Azure service principal client ID"
 }
 
-variable "client_secret" {
+variable "clientSecret" {
   description = "The Azure service principal client secret"
   sensitive = true
 }
 
-variable "tenant_id" {
+variable "tenantId" {
   description = "The Azure tenant ID"
 }
